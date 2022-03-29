@@ -1,0 +1,14 @@
+body {
+
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+}
+.leagues {
+    width: 25%;
+}
+img {
+    max-width: 100%;
+    width: 40%;
+}
