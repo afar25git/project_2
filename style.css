@@ -1,14 +1,19 @@
 body {
-
+    font-family: 'David Libre', serif;
 }
 header {
     text-align: center;
+}
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 3.4em;
+    margin-bottom: 0;
 }
 h2 {
     font-size: 1em;
     font-style: italic;
     font-weight: lighter;
-    margin-top: 0;
+    margin: 0 auto 50px;
 }
 #home {
     display: flex;
@@ -19,13 +24,17 @@ h2 {
     width: 98%;
 }
 .leagues {
+    color: #000;
     cursor: pointer;
+    border-radius: 8px;
     display: block;
+    padding: 18px 0;
     text-align: center;
     text-decoration: none;
     width: 33.3%;
 }
 .leagues:hover {
+    background-color: lightgray;
     opacity: .7;
 }
 img {
