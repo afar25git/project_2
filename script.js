@@ -9,7 +9,7 @@ const initial = async () => {
         let newArticle = document.createElement('a')
         newArticle.className = 'leagues'
         newArticle.href = leaguetitle.slug+'.html'
-        let newText = document.createElement('h2')
+        let newText = document.createElement('h3')
         newText.innerText = leaguetitle.name
         
         let newImage = document.createElement('img')
