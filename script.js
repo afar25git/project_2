@@ -8,6 +8,7 @@ const initial = async () => {
     leagueArray.forEach((leaguetitle) => {
         let newArticle = document.createElement('a')
         newArticle.className = 'leagues'
+        newArticle.href = leaguetitle.slug+'.html'
         let newText = document.createElement('h2')
         newText.innerText = leaguetitle.name
         
