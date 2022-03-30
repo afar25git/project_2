@@ -3,7 +3,7 @@ let leagueArray = []
 
 const initial = async () => {
     let response = await axios.get('https://api-football-standings.azharimm.site/leagues')
-    leagueArray = [response.data.data[5], response.data.data[9], response.data.data[16]]
+    leagueArray = [response.data.data[5], response.data.data[9], response.data.data[16], response.data.data[2]]
     
     leagueArray.forEach((leaguetitle) => {
         let newArticle = document.createElement('a')
