@@ -1,12 +1,12 @@
-const getStartedButton = document.querySelector('button')
-const leagueName = document.querySelector('div')
+const leagueName = document.getElementById('home')
+let leagueArray = []
 
-getStartedButton.addEventListener('click', async () => {
+const initial = async () => {
     let response = await axios.get(`https://api-football-standings.azharimm.site/leagues`)
-    let leagueArray = response.data.data
+    leagueArray = [response.data.data[5], response.data.data[9], response.data.data[16]]
     
     leagueArray.forEach((leaguetitle) => {
-        let newArticle = document.createElement('article')
+        let newArticle = document.createElement('a')
         newArticle.className = 'leagues'
         let newText = document.createElement('h2')
         newText.innerText = leaguetitle.name
@@ -19,8 +19,11 @@ getStartedButton.addEventListener('click', async () => {
         newArticle.append(newText, newImage)
     });
 
-    console.log(response.data)
-    //Premier League
+    console.log(response.data) 
+}
+initial()
+
+//Premier League
     // let premierLeagueName = response.data.data[5].name
     // let premierLeagueLogo = response.data.data[5].logos.light
     // leagueName.innerHTML = `<article class='leagues'><h2>${premierLeagueName}</h2><img src='${premierLeagueLogo}' alt='${premierLeagueName}' /></article>`
@@ -28,5 +31,3 @@ getStartedButton.addEventListener('click', async () => {
     // let ligaLeagueName = response.data.data[16].name
     // let ligaLeagueLogo = response.data.data[16].logos.light
     // leagueName.innerHTML = `<article class='leagues'><h2>${ligaLeagueName}</h2><img src='${ligaLeagueLogo}' alt='${ligaLeagueName}' /></article>`
-
-})
