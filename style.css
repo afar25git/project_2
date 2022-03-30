@@ -41,3 +41,7 @@ img {
     max-width: 100%;
     width: 70%;
 }
+
+.standings, section {
+    width: 50%;
+}

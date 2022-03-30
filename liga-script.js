@@ -24,7 +24,25 @@ const laLiga = async () => {
     let championName = document.createElement('h1')
     championName.innerText = response.data.data.standings[0].team.name
     championBox.append(championLogo, championName)
-
-    
 }
 laLiga()
+
+const championsLeagueBtn = document.querySelector('.champions-league-btn')
+const championsLeagueBox = document.querySelector('.champions-league')
+let championsLeagueArray = []
+
+championsLeagueBtn.addEventListener('click', async () => {
+    let response = await axios.get('https://api-football-standings.azharimm.site/leagues/esp.1/standings?season=2020')
+    championsLeagueArray = [response.data.data.standings[0], response.data.data.standings[1], response.data.data.standings[2], response.data.data.standings[3]]
+    
+    championsLeagueArray.forEach((leaguetitle) => {
+        let championsLeagueTeam = document.createElement('article')
+
+        let clTeamName = document.createElement('h2')
+        clTeamName.innerText = leaguetitle.team.name
+        
+        championsLeagueBox.append(championsLeagueTeam)
+        championsLeagueTeam.append(clTeamName)
+    });
+
+})
