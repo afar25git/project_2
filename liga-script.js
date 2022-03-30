@@ -3,7 +3,6 @@ const championBox = document.querySelector('.champion')
 
 const laLiga = async () => {
     let response = await axios.get('https://api-football-standings.azharimm.site/leagues/esp.1/standings?season=2020')
-    console.log(response.data.data.standings)
     let laLigaArray = response.data.data.standings
     
     laLigaArray.forEach((teamparameter) => {
@@ -38,11 +37,55 @@ championsLeagueBtn.addEventListener('click', async () => {
     championsLeagueArray.forEach((leaguetitle) => {
         let championsLeagueTeam = document.createElement('article')
 
-        let clTeamName = document.createElement('h2')
+        let clTeamName = document.createElement('h4')
         clTeamName.innerText = leaguetitle.team.name
         
         championsLeagueBox.append(championsLeagueTeam)
         championsLeagueTeam.append(clTeamName)
+        championsLeagueBtn.className = 'hide'
+    });
+
+})
+
+const europaLeagueBtn = document.querySelector('.europa-league-btn')
+const europaLeagueBox = document.querySelector('.europa-league')
+let europaLeagueArray = []
+
+europaLeagueBtn.addEventListener('click', async () => {
+    let response = await axios.get('https://api-football-standings.azharimm.site/leagues/esp.1/standings?season=2020')
+    europaLeagueArray = [response.data.data.standings[4], response.data.data.standings[5]]
+    
+    europaLeagueArray.forEach((leaguetitle) => {
+        let europaLeagueTeam = document.createElement('article')
+
+        let eTeamName = document.createElement('h4')
+        eTeamName.innerText = leaguetitle.team.name
+        
+        europaLeagueBox.append(europaLeagueTeam)
+        europaLeagueTeam.append(eTeamName)
+        europaLeagueBtn.className = 'hide'
+    });
+
+})
+
+
+const relegationBtn = document.querySelector('.relegation-btn')
+const relegationBox = document.querySelector('.relegation')
+let relegationArray = []
+
+relegationBtn.addEventListener('click', async () => {
+    let response = await axios.get('https://api-football-standings.azharimm.site/leagues/esp.1/standings?season=2020')
+    relegationArray = [response.data.data.standings[17], response.data.data.standings[18], response.data.data.standings[19]]
+    
+    relegationArray.forEach((leaguetitle) => {
+        let relegationTeam = document.createElement('article')
+
+        let rTeamName = document.createElement('h4')
+        rTeamName.innerText = leaguetitle.team.name
+        
+        relegationBox.append(relegationTeam)
+        relegationTeam.append(rTeamName)
+        relegationBtn.className = 'hide'
     });
 
 })

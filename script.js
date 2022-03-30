@@ -14,7 +14,7 @@ const initial = async () => {
         newImage.src = leaguetitle.logos.light
         newImage.alt = leaguetitle.name
         // League Name
-        let newText = document.createElement('h3')
+        let newText = document.createElement('h4')
         newText.innerText = leaguetitle.name
 
         leagueName.append(newArticle)
@@ -24,12 +24,3 @@ const initial = async () => {
     console.log(response.data) 
 }
 initial()
-
-//Premier League
-    // let premierLeagueName = response.data.data[5].name
-    // let premierLeagueLogo = response.data.data[5].logos.light
-    // leagueName.innerHTML = `<article class='leagues'><h2>${premierLeagueName}</h2><img src='${premierLeagueLogo}' alt='${premierLeagueName}' /></article>`
-    // //La Liga
-    // let ligaLeagueName = response.data.data[16].name
-    // let ligaLeagueLogo = response.data.data[16].logos.light
-    // leagueName.innerHTML = `<article class='leagues'><h2>${ligaLeagueName}</h2><img src='${ligaLeagueLogo}' alt='${ligaLeagueName}' /></article>`
