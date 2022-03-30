@@ -142,3 +142,9 @@ button, .go-back {
   .hide {
       display: none;
   }
+  #made-by {
+    text-align: center;
+    margin-top: 100px;
+    font-style: italic;
+    color: lightgray;
+  }
