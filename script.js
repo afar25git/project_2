@@ -33,31 +33,3 @@ initial()
     // let ligaLeagueName = response.data.data[16].name
     // let ligaLeagueLogo = response.data.data[16].logos.light
     // leagueName.innerHTML = `<article class='leagues'><h2>${ligaLeagueName}</h2><img src='${ligaLeagueLogo}' alt='${ligaLeagueName}' /></article>`
-
-
-    const leagueStandings = document.getElementsByClassName('standings')
-    // let leagueArray = []
-    
-    // const initial = async () => {
-    //     let response = await axios.get('https://api-football-standings.azharimm.site/leagues/esp.1/standings?season=2020')
-    //     leagueArray = [response.data.data[5], response.data.data[9], response.data.data[16]]
-        
-    //     leagueArray.forEach((leaguetitle) => {
-    //         let newArticle = document.createElement('a')
-    //         newArticle.className = 'leagues'
-    //         newArticle.href = leaguetitle.slug+'.html'
-    //         // League Logo
-    //         let newImage = document.createElement('img')
-    //         newImage.src = leaguetitle.logos.light
-    //         newImage.alt = leaguetitle.name
-    //         // League Name
-    //         let newText = document.createElement('h3')
-    //         newText.innerText = leaguetitle.name
-    
-    //         leagueName.append(newArticle)
-    //         newArticle.append(newImage, newText)
-    //     });
-    
-    //     console.log(response.data) 
-    // }
-    // initial()
